@@ -24,7 +24,7 @@ function slice(array, start, end) {
     return []
   }
   start = start == null ? 0 : start
-  end = end === undefined ? length : end
+  end = end === undefined ? length : end //没有传入实参的形参返回的是undefined
 
   if (start < 0) {
     start = -start > length ? 0 : (length + start)
@@ -33,7 +33,7 @@ function slice(array, start, end) {
   if (end < 0) {
     end += length
   }
-  length = start > end ? 0 : ((end - start) >>> 0)
+  length = start > end ? 0 : ((end - start) >>> 0) // >>> 0 无符号移位符，保证返回的是有意义的正整数
   start >>>= 0
 
   let index = -1
